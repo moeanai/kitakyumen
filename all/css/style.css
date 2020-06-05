@@ -1,0 +1,314 @@
+@charset "utf-8";
+
+.wrapper {
+	background-color: #fff;
+	color: #A72126;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+}
+
+.contents {
+	transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+header {
+	text-align: center;
+	height: 250px;
+}
+/* Nav
+-----------------------------------------*/
+.Nav {
+  margin-top: 30px;
+}
+@media screen and (max-width: 1000px) {
+  .Nav {
+    position: relative;
+  }
+}
+.Nav .navbtn {
+  display: none;
+}
+@media screen and (max-width: 1000px) {
+  .Nav .navbtn {
+    display: block;
+    position: absolute;
+    top: -50px;
+    right: 10px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .Nav .navbtn a,
+  .Nav .navbtn a.close {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: #A72126;
+  }
+  .Nav .navbtn a::before,
+  .Nav .navbtn a.close::before {
+    position: absolute;
+    top:10px;
+    left:10px;
+    content:"";
+    width: 20px;
+    height: 3px;
+	color: #A72126;
+    background-color: #FFF;
+   transition: .2s;
+  }
+  .Nav .navbtn a.open::before {
+    top:19px;
+    transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  }
+  .Nav .navbtn a::after,
+  .Nav .navbtn a.close::after {
+    position: absolute;
+    bottom:10px;
+    left:10px;
+    content:"";
+    width: 20px;
+    height: 3px;
+	color: #A72126;
+    background-color: #FFF;
+    transition: .2s;
+  }
+  .Nav .navbtn a.open::after {
+    bottom:18px;
+    transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .Nav .navbtn a.open {
+  }
+}
+ 
+@media screen and (max-width: 1000px) {
+  .Nav .navbtn a span {
+    display: block;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+  }
+  .Nav .navbtn a span::after,
+  .Nav .navbtn a.close span::after {
+    position: absolute;
+    top:18px;
+    left:10px;
+    content:"";
+    width: 20px;
+    height: 3px;
+	color: #A72126;
+    background-color: #FFF;
+  }
+  .Nav .navbtn a.open span::after {
+    display: none;
+  }
+}
+.Nav ul.close {
+  display: none;
+  border-top: solid 1px #F5F4F0;
+}
+.Nav > ul {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+@media screen and (max-width: 1000px) {
+  .Nav > ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+	color: #A72126;
+    background-color: #FFF;
+  }
+}
+.Nav > ul > li {
+  position: relative;
+  font-size: 15px;
+  display: inline-block;
+}
+@media screen and (max-width: 1000px) {
+  .Nav > ul > li {
+    display: block;
+    border-bottom: solid 0px #dddddd;
+  }
+}
+.Nav > ul > li a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  padding: 19px 15px;
+  font-size: 15px;
+  color: #A72126;
+  background-color: #fff;
+  z-index: 2;
+}
+.Nav > ul > li.parent > a {
+  padding-right:25px;
+}
+.Nav > ul > li.parent > a::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    width: 6px;
+    height: 6px;
+    margin: -6px 0 0 0;
+    border-top: solid 2px #A72126;
+    border-right: solid 2px #A72126;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+@media screen and (max-width: 1000px) {
+.Nav > ul > li.parent.open > a::before {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+}
+@media screen and (max-width: 1000px) {
+  .Nav > ul > li.parent.open {
+    border-bottom: none;
+  }
+}
+  .Nav > ul > li.parent.open > a{
+    color: #FFF;
+  }
+  .Nav > ul > li.parent.open > a::after {
+  background: #A72126;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+@media screen and (max-width: 1000px) {
+  .Nav > ul > li.parent.open > a {
+    color: #FFF;
+  }
+}
+ 
+.Nav > ul > li a:hover {
+  color: #fff;
+}
+.Nav > ul > li a::after {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  content: '';
+}
+.Nav > ul > li a,
+.Nav > ul > li a::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.Nav > ul > li a::after {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(.5);
+  transform: scale(.5);
+}
+.Nav > ul > li a:hover::after {
+  background: #A72126;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+ 
+/* 2階層 */
+.Nav > ul > li > ul {
+  list-style-type: none; 
+  display: none;
+  position: absolute;
+  top: 53px;
+  left: 0;
+  width: auto;
+  background-color: #FFFFFF;
+  z-index: 9;
+}
+ 
+@media screen and (max-width: 1000px) {
+  .Nav > ul > li > ul {
+    background-color: #fff;
+    position: static;
+  }
+}
+ 
+.Nav > ul > li > ul li {
+  white-space: nowrap;
+}
+ 
+.Nav > ul > li > ul li a {
+  position: relative;
+  padding: 12px 27px 12px 27px;
+}
+@media screen and (max-width: 1000px) {
+  .Nav > ul > li > ul li a {
+    border-bottom: solid 1px #fff;
+    background-color: #fff;
+  }
+}
+.Nav > ul > li > ul li a::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    width: 6px;
+    height: 6px;
+    margin: -6px 0 0 0;
+    border-top: solid 2px #A72126;
+    border-right: solid 2px #A72126;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.Nav > ul > li > ul li a:hover {
+  text-decoration: none;
+}
+ 
+@media screen and (max-width: 1000px) {
+  .Nav > ul > li > ul li a:hover {
+    background-color: #FFF;
+  }
+}
+ 
+.Nav > ul > li > ul li ul li a {
+  padding-left: 42px;
+}
+.Nav > ul > li > ul li ul li a::before {
+    left: 20px;
+}
+/* Nav
+-----------------------------------------*/
+
+.box {
+	text-align: center;
+	display: block;
+}
+.box a {
+	text-decoration: none;
+}
+.box a:link {color: #A72126;}
+.box a:visited {color: gray;}
+.box img{
+	width: 400px;
+	height: 400px;
+}
+
+
+#footer {
+	margin-top: 50px;
+	height: 100px;
+	background-color: #A72621;
+}
+.footer_btm{
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 10px;
+	padding: 5px;
+	}
